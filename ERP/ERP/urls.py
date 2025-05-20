@@ -15,11 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
 from . import views # Import do arquivo que contém as URLs do projeto ERP
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('teste/', views.teste_view, name='teste_view'), # URL para a view de teste
-    path( '', views.index_view, name='index_view'), # URL para a view de index
+    path('estoque/', include('estoque.urls')), # URL para o aplicativo estoque
+
 ]
