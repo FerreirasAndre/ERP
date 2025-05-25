@@ -1,0 +1,29 @@
+<html>
+	<head><title>retrieve page placeholder</title></head>
+	<body>
+		<p><h1>retrieve page placeholder</h1></p>
+		<table border="1">
+			<thead>
+				<th>Asset Name</th>
+				<th>Asset Description</th>
+				<th>Supplier Name</th>
+				<th>Asset Availability</th>
+				<th>Harvest Date</th>
+			</thead>
+			<tbody>
+				{% for asset in assets %}
+				<tr>
+				<td>{{asset.name}}</td>
+				<td>{{asset.description}}</td>
+				<td>{{asset.supplier}}</td>
+				<td>{{asset.available}}</td>
+				<td>{{asset.timestamp}}</td>
+				<td><a href="{% url 'CRUD:CRUD_delete' asset.id %}">Remove Entry</a></td>
+				<td><a href="{% url 'CRUD:CRUD_update' asset.id %}">Update Entry</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<input type="submit" value="Back to Home" >
+	</body>
+</html>
