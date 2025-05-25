@@ -13,7 +13,7 @@ def CRUD_create(request: HttpRequest):
 			received_form.save()
 			return redirect("CRUD:CRUD_home")
 	form = { 
-		"form": CreateDataForm
+		"form": CreateDataForm()
 	}
 	return render(request, 'CRUD/create.html', form)
 
