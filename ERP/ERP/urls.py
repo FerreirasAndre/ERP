@@ -23,4 +23,5 @@ urlpatterns = [
     path('home', views.home_view), 
     path('', views.template_view), 
     
+	path('CRUD/', include ("CRUD.urls"))
 ]
