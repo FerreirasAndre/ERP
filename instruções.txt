@@ -1,0 +1,32 @@
+-Devem ser implementados (i) um serviço web,o
+qual deve realizar uma funcionalidade desejada por uma aplicação, e (ii)
+a aplicação cliente de tal serviço
+
+
+-A linguagem de programação ou o framework
+de serviço Web são de livre escolha
+
+
+-Além dos artefatos de código, devem ser
+entregues a (i) descrição textual, (ii) especificação dos requisitos da
+aplicação, e (iii) a modelagem do sistema proposto,
+incluindo a arquitetura da solução (sugere-se usar diagramas UML para tal, como
+DCU, de componentes, de implantação, etc.)
+
+
+-Também deve ser entregue um vídeo de até
+10 minutos ilustrando a execução do serviço/aplicação
+Artefatos a serem entregues:
+
+
+1 - Relatório
+contendo a especificação e modelagem do sistema
+
+
+2 - Artefatos
+de código do
+lado cliente e do lado servidor
+
+
+3 - Vídeo
+ilustrando a execução da aplicação

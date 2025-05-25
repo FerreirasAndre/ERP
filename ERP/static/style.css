@@ -1,0 +1,64 @@
+
+body{
+    margin: 0;
+}
+
+.container {
+    font-family: cursive;
+    display: flex; /* ESSENCIAL: Faz com que os filhos diretos de .container se organizem como itens flex.
+                     Se .left e .right estiverem dentro de .container, eles serão dispostos
+                     de acordo com as regras do flexbox (por padrão, em linha/horizontalmente). */
+    width: 100%; /* O contêiner ocupará a largura total de seu elemento pai (geralmente o body) */
+   
+    min-height: 100vh; /* O contêiner terá, no mínimo, a altura total da viewport (janela de visualização do navegador) */
+    background: rgb(79, 34, 229); /* Define a cor de fundo do contêiner como azul.
+                              Observação: Se as divs .left e .right estiverem dentro e preencherem
+                              este contêiner, essa cor azul poderá ficar coberta pelos fundos delas. */
+}
+
+.side-left {
+    margin-left: 4%;
+    margin-top: 4%;
+    width: 30%; /* A div .left ocupará 50% da largura de seu elemento pai */
+    padding: 20px; /* Adiciona 20 pixels de espaçamento interno (preenchimento) dentro das bordas da div .left */
+    box-sizing: border-box; /* Garante que o preenchimento (padding) e a borda não aumentem a largura total (50%) da div .left. */
+    background: #1f1083; /* Define uma cor de fundo avermelhada */
+    border: 1px solid #000000; /* Adiciona uma borda preta de 2 pixels ao redor da div .left */
+    border-bottom-left-radius:10%;
+    border-top-left-radius: 10%;
+    
+}
+
+/* Coluna da direita */
+.side-right {
+    margin-right: 4%;
+    margin-top: 4%;
+    width: 70%; /* A div .right ocupará 50% da largura de seu elemento pai */
+    padding: 20px; /* Adiciona 20 pixels de espaçamento interno (preenchimento) dentro das bordas da div .right */
+    box-sizing: border-box; /* Garante que o preenchimento (padding) e a borda não aumentem
+                               a largura total (50%) da div .right. */
+    background: white; /* Define uma cor de fundo cinza claro */
+    border-bottom-right-radius:10%;
+    border-top-right-radius: 10%;
+}
+
+.style1 {
+    color: white;
+    font-size: 25px; /* Define o tamanho da fonte como 20 pixels */
+    text-align: center;
+    margin-bottom: 100px; /* Adiciona uma margem inferior de 20 pixels */
+    
+}
+
+.links {
+    margin-top: 50px; /* Adiciona uma margem superior de 10 pixels */
+    margin-bottom: 50px; /* Adiciona uma margem inferior de 10 pixels */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: rgb(255, 255, 255); /* Define a cor do texto dos links como branca */
+    font-size: x-large;
+    
+ 
+    text-align: center;
+    
+}
+
