@@ -4,7 +4,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def home_view(request):
-    return HttpResponse("Bem vindo(a) ao sistema de Gestão UFF PLUS.")
+    return render(request, 'FrontEnd/home.html')
 
-def template_view(request):
-    return render(request, 'template.html')
+def estoque_view(request):
+    return render(request, 'FrontEnd/estoque.html')
+
+def adicionar_estoque_view(request):
+    return render(request, 'FrontEnd/adicionar-estoque.html')
+
+def consultar_estoque_view(request):
+    return render(request, 'FrontEnd/consultar-estoque.html')

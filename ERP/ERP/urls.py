@@ -15,13 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path 
+from django.urls import path, include 
 from . import views # Import do arquivo que contém as URLs do projeto ERP
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home', views.home_view), 
-    path('', views.template_view), 
-    
+    path('', views.home_view), 
+    path('estoque/', views.estoque_view, name='estoque'), 
+    path('adicionar-estoque/', views.adicionar_estoque_view, name='adicionar-estoque'), 
+    path('consultar-estoque/', views.consultar_estoque_view, name='consultar-estoque'), 
 	path('CRUD/', include ("CRUD.urls"))
 ]

@@ -4,6 +4,7 @@ body{
 }
 
 .container {
+    
     font-family: cursive;
     display: flex; /* ESSENCIAL: Faz com que os filhos diretos de .container se organizem como itens flex.
                      Se .left e .right estiverem dentro de .container, eles serão dispostos
@@ -44,21 +45,89 @@ body{
 
 .style1 {
     color: white;
-    font-size: 25px; /* Define o tamanho da fonte como 20 pixels */
+    font-size: 25; /* Define o tamanho da fonte como 20 pixels */
     text-align: center;
     margin-bottom: 100px; /* Adiciona uma margem inferior de 20 pixels */
     
 }
 
+.style2 {
+    color: #1f1083;
+    font-size: 30px; /* Define o tamanho da fonte como 20 pixels */
+    text-align: center;
+    margin-bottom: 100px; /* Adiciona uma margem inferior de 20 pixels */
+    
+}
+
+.style3 {
+    color: #1f1083;
+    font-size: 30px; /* Define o tamanho da fonte como 20 pixels */
+    text-align: center;
+    margin-bottom: 100px; /* Adiciona uma margem inferior de 20 pixels */
+}
+
+.style4 {
+    color: #1f1083;
+    margin-bottom: 50px; /* Adiciona uma margem inferior de 20 pixels */
+    font-size: 25px; /* Define o tamanho da fonte como 20 pixels */
+    text-decoration: none;
+    color: #1f1083;
+
+}
+
 .links {
-    margin-top: 50px; /* Adiciona uma margem superior de 10 pixels */
-    margin-bottom: 50px; /* Adiciona uma margem inferior de 10 pixels */
+    margin-top: 30px; /* Adiciona uma margem superior de 10 pixels */
+    margin-bottom: 30px; /* Adiciona uma margem inferior de 10 pixels */
     text-decoration: none; /* Remove o sublinhado dos links */
     color: rgb(255, 255, 255); /* Define a cor do texto dos links como branca */
     font-size: x-large;
-    
- 
     text-align: center;
     
+}
+
+.form-box{
+    display: flex;
+    flex-direction: column; 
+    border-radius: 8px;
+    width: 100%;
+   
+}
+
+.form-box form{
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 32px;
+  
+}
+.form-box input,
+.form-box textarea{
+    width: 80%;
+    height: 30px;
+    border-radius: 8px;
+    border:thin solid gray;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    font-size: 16px; /* Define o tamanho da fonte como 16 pixels */
+}
+
+.form-box button{
+    align-items: center;
+
+    border-radius: 8px;
+    display: block;
+    border: none;
+    outline: none  ;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(31, 104, 206);
+    color: white;
+    font-size: 20px; /* Define o tamanho da fonte como 20 pixels */
+    font-weight: bold;
+    cursor: pointer; /* Muda o cursor para uma mãozinha quando passa sobre o botão */
+}
+
+.form-box button:hover{
+    background-color: rgb(31, 34, 229); /* Muda a cor de fundo do botão quando o mouse passa sobre ele */
 }
 

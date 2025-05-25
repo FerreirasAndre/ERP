@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
+    <title>Consultar Estoque</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}"> 
 </head>
@@ -11,20 +11,29 @@
 
    <div class="container">
         <div class ="side-left">
-        <h1 class="style1"> Sistema de Planejamento de Recursos Empresariais </h1>
+        <h1 class="style1"> Aplicações </h1>
 
             <div class="menu">
-                <div class="links"><a href="#">Estoque</a></div>
+                <div class="links"><a href="/"Home>Home</a></div>
+                <div class="links"><a href="{% url  'estoque' %}">Estoque</a></div>
                 <div class="links"><a href="#">Vendas</a></div>
                 <div class="links"><a href="#">Compras</a></div>
                 <div class="links"> <a href="#">Financeiro</a></div>
                 <div class="links"> <a href="#">Relatórios</a></div>
+                <div class="links"> <a href="#">Clientes</a></div>
             </div>
         </div>
 
         <div class="side-right">
-            <h1> Dentro da DIV.</h1>
-            <p>Este é um exemplo de template HTML.</p>
+            <div class="form-box">
+                <h2 class="style3">Bem vindo(a) ao sistema de estoque</h2>
+                <form action="">
+                    <input type="text" name="item" placeholder="Digite o nome do item" required>
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+            
+           
         </div>
     </div>
 
