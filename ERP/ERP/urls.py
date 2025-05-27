@@ -14,9 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from CRUD.views import AssetViewSet
 from django.contrib import admin
 from django.urls import path, include 
 from . import views # Import do arquivo que contém as URLs do projeto ERP
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'assets', AssetViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +29,6 @@ urlpatterns = [
     path('estoque/', views.estoque_view, name='estoque'), 
     path('adicionar-estoque/', views.adicionar_estoque_view, name='adicionar-estoque'), 
     path('consultar-estoque/', views.consultar_estoque_view, name='consultar-estoque'), 
-	path('CRUD/', include ("CRUD.urls"))
+	#path('CRUD/', include ("CRUD.urls"))
+	path('CRUD/', include(router.urls))
 ]

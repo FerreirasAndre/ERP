@@ -1,7 +1,7 @@
 from django import forms
-from .models import AssetModel
+from .models import Asset
 
 class CreateDataForm(forms.ModelForm):
 	class Meta:
-		model = AssetModel
-		fields = ['name', 'supplier', 'description', 'available']
+		model = Asset
+		fields = ['name', 'quantity', 'description', 'category']
