@@ -29,12 +29,13 @@
             
             <div class="form-box">
                 
-                <form action="" method="get" >
+                <form action="" method="post" >{% csrf_token %}
             
-                    <input type="text" name="item" placeholder="Digite o nome do item" required>
-                    <input type="number" name="quantidade" placeholder="Digite a quantidade" required>
-                    <input type="text" name="descricao" placeholder="Digite a descrição do item" required>
-                    <input type="text" name="categoria" placeholder="Digite a categoria do item" required>
+                    <input type="text" name="name" placeholder="Digite o nome do item" required>
+                    <input type="number" name="quantity" placeholder="Digite a quantidade" required>
+                    <input type="text" name="description" placeholder="Digite a descrição do item" required>
+                    <input type="text" name="category" placeholder="Digite a categoria do item" required>
+                    
                     <button type="submit">Cadastrar</button>
                 </form>
             </div>

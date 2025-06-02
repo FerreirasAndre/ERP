@@ -24,7 +24,28 @@
             </div>
         </div>
 
-        <div class="side-right">
+        <div class = "side-right">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantidade</th>
+                        <th>Descrição</th>
+                        <th>Categoria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.descri }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="side-right">
             <div class="form-box">
                 <h2 class="style3">Bem vindo(a) ao sistema de estoque</h2>
                 <form action="">
@@ -34,7 +55,7 @@
             </div>
             
            
-        </div>
+        </div> -->
     </div>
 
 

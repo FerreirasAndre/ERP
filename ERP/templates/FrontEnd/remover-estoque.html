@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoque</title>
+    <title>Consultar Estoque</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}"> 
 </head>
@@ -25,19 +25,14 @@
         </div>
 
         <div class="side-right">
-            
+            <div class="form-box">
                 <h2 class="style3">Bem vindo(a) ao sistema de estoque</h2>
-                <h2 class="style4"> Escolha o que deseja fazer: </h2>
-            
-
-            <div class="menu">
-                <div class="style4"><a href="{% url 'CRUD:asset_list' %}">Consultar estoque</a></div>
-                <div class="style4"><a href="{% url 'adicionar-estoque' %}">Adicionar item</a></div>
-                <div class="style4"><a href="{% url 'remover-estoque' %}">Remover item</a></div>
-                <div class="style4"><a href="{% url 'editar-estoque' %}">Editar item</a></div>
-                
-                
+                <form action="">
+                    <input type="text" name="item" placeholder="Digite o nome do item" required>
+                    <button type="submit">Pesquisar</button>
+                </form>
             </div>
+            
            
         </div>
     </div>

@@ -21,7 +21,8 @@ from . import views # Import do arquivo que contém as URLs do projeto ERP
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'assets', AssetViewSet)
+router.register('assets', AssetViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +30,16 @@ urlpatterns = [
     path('estoque/', views.estoque_view, name='estoque'), 
     path('adicionar-estoque/', views.adicionar_estoque_view, name='adicionar-estoque'), 
     path('consultar-estoque/', views.consultar_estoque_view, name='consultar-estoque'), 
-	#path('CRUD/', include ("CRUD.urls"))
-	path('CRUD/', include(router.urls))
+    path('remover-estoque/', views.remover_estoque_view, name='remover-estoque'), 
+    path('editar-estoque/', views.editar_estoque_view, name='editar-estoque'), 
+    path('CRUD/', include('CRUD.urls', namespace='CRUD'))
+
+
+    #path('CRUD/', include(router.urls)),  # Incluindo as URLs da API REST
+    #path('CRUD/', include('CRUD.urls')),  # Incluindo as URLs do CRUD
+
 ]
+
+# Em TRABALHO_2_ERP/ERP/urls.py (ou o urls.py principal do seu projeto)
+
+

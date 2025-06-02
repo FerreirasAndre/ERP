@@ -14,3 +14,9 @@ def adicionar_estoque_view(request):
 
 def consultar_estoque_view(request):
     return render(request, 'FrontEnd/consultar-estoque.html')
+
+def remover_estoque_view(request):
+    return render(request, 'FrontEnd/remover-estoque.html')
+
+def editar_estoque_view(request):
+    return render(request, 'FrontEnd/editar-estoque.html')

@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Asset(models.Model):
-	name = models.CharField(max_length=128)
+	
+	name = models.CharField(primary_key=True, max_length=128)
 	quantity = models.IntegerField()
 	description = models.TextField(max_length=2048, blank=True)
 	category = models.CharField(max_length=64)
@@ -10,7 +11,7 @@ class Asset(models.Model):
 
 	def __str__(self):
 		return self.name
-	
+		
 	def get_quantity(self):
 		return self.quantity
 	
@@ -22,3 +23,5 @@ class Asset(models.Model):
 	
 	def get_timestamp(self):
 		return self.timestamp
+	
+	
