@@ -58,6 +58,7 @@ def asset_list_view(request):
 def CRUD_home(request):
     return render(request, 'CRUD/index.html')
 
+@api_view(['POST'])
 def CRUD_create(request):
     if request.method == "POST":
         received_form = CreateDataForm(request.POST)
@@ -67,7 +68,24 @@ def CRUD_create(request):
     else:
         received_form = CreateDataForm() # Adicionado para exibir o formulário GET
     return render(request, 'CRUD/create.html', {'form': received_form})
-	
+
+@api_view(['DELETE'])
+def CRUD_delete(request: HttpRequest, id):
+     if request.method == "DELETE":
+          remove_request = get_object_or_404(Asset, id)
+          remove_request.delete()
+          return Response(status = status.HTTP_204_NO_CONTENT)
+     
+@api_view(['PUT'])
+def CRUD_update(request, id):
+     update_request = get_object_or_404(Asset, id)
+     if request.method=="PUT":
+        update_form = CreateDataForm(request.POST, instance = update_request)
+        if update_form.is_valid():
+              update_form.save()
+              return Response(update_form.data)
+        return Response(update_form.errors, status = status.HTTP_400_BAD_REQUEST)
+
 
 # def CRUD_home(request):
 # 	return render(request, 'CRUD/index.html')
