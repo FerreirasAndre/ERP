@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Item</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+</head>
+<body>
+
+   <div class="container">
+        <div class ="side-left">
+        <h1 class="style1"> Aplicações </h1>
+
+            <div class="menu">
+                <div class="links"><a href="/"Home>Home</a></div>
+                <div class="links"><a href="{% url  'estoque' %}">Estoque</a></div>
+                <div class="links"><a href="#">Vendas</a></div>
+                <div class="links"><a href="#">Compras</a></div>
+                <div class="links"> <a href="#">Financeiro</a></div>
+                <div class="links"> <a href="#">Relatórios</a></div>
+                <div class="links"> <a href="#">Clientes</a></div>
+            </div>
+        </div>
+
+        <div class = "side-right">
+       
+</head>
+<body>
+    <h1 class="style6">Remover itens do estoque</h1>
+
+    {% if assets %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Quantidade</th>
+                    <th>Preço (R$)</th>
+                    <th>Categoria </th>
+                    <th>Data do registro</th>
+                    <th>Remover</th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in assets %}
+                    <tr>
+                        <td>{{ asset.name }}</td>
+                        <td>{{ asset.id }}</td>
+                        <td>{{ asset.quantity }}</td>
+                        <td>{{ asset.price }}</td>
+                        <td>{{ asset.category }}</td>
+                        <td>{{ asset.timestamp }}</td>
+
+                        <td> <a href="{% url 'CRUD:CRUD_delete' asset.pk %}" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a>
+                        </td>                     
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+         <p class="style5"> Nenhum item encontrado em estoque.</p>
+    {% endif %}
+  
+</body>
+</html>
+        </div>
+        
+    </div>
+
+
+   
+
+
+
+   

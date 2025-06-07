@@ -4,4 +4,4 @@ from .models import Asset
 class CreateDataForm(forms.ModelForm):
 	class Meta:
 		model = Asset
-		fields = ['name', 'quantity', 'description', 'category']
+		fields = ['name', 'quantity', 'category', 'price']

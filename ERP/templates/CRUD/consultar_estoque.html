@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,41 +26,51 @@
         </div>
 
         <div class = "side-right">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantidade</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item in items %}
-                    <tr>
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ item.descri }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <!-- <div class="side-right">
-            <div class="form-box">
-                <h2 class="style3">Bem vindo(a) ao sistema de estoque</h2>
-                <form action="">
-                    <input type="text" name="item" placeholder="Digite o nome do item" required>
-                    <button type="submit">Pesquisar</button>
-                </form>
-            </div>
-            
            
-        </div> -->
+</head>
+<body>
+    <h1 class="style6">Itens em estoque</h1>
+
+    {% if assets %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Quantidade</th>
+                    <th>Preço (R$)</th>
+                    <th>Categoria </th>
+                    <th>Data do registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for asset in assets %}
+                    <tr>
+                        <td>{{ asset.name }}</td>
+                        <td>{{ asset.id }}</td>
+                        <td>{{ asset.quantity }}</td>
+                        <td>{{ asset.price }}</td>
+                        <td>{{ asset.category }}</td>
+                        <td>{{ asset.timestamp }}</td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+         <p class="style5"> Nenhum item encontrado em estoque.</p>
+    {% endif %}
+
+  
+</body>
+</html>
+        </div>
+        
     </div>
 
 
    
-    
-</body>
-</html>
+
+
+
+   
