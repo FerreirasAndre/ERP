@@ -75,6 +75,7 @@ def atualizar_estoque_view(request):
 def CRUD_home(request):
     return render(request, 'CRUD/index.html')
 
+@api_view(['POST'])
 def CRUD_create(request):
     if request.method == "POST":
         received_form = CreateDataForm(request.POST)
@@ -86,7 +87,7 @@ def CRUD_create(request):
         received_form = CreateDataForm() # Adicionado para exibir o formulário GET
         return render(request, 'CRUD/adicionar_estoque.html', {'form': received_form})
 
-
+@api_view(['GET', 'POST'])
 def CRUD_delete(request, id):  # 'id' será o valor capturado da URL
     # Usa get_object_or_404 para buscar o objeto Asset pelo ID
     # Se o objeto não for encontrado, ele automaticamente levanta um 404
@@ -107,7 +108,7 @@ def CRUD_delete(request, id):  # 'id' será o valor capturado da URL
     asset_to_delete.delete()  # Exclui o objeto
     return redirect('CRUD:remover_estoque')  # Redireciona para a lista de ativos
 
-
+@api_view(['GET', 'POST'])
 def CRUD_update(request, id):  # 'id' será o valor capturado da URL
     # 1. Obter o objeto Asset que será atualizado
     asset_to_update = get_object_or_404(Asset, pk=id)  # 'pk' se refere à chave primária (o 'id' numérico agora)

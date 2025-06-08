@@ -28,10 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view), 
     path('estoque/', views.estoque_view, name='estoque'), 
-    path('adicionar-estoque/', views.adicionar_estoque_view, name='adicionar-estoque'), 
-    path('consultar-estoque/', views.consultar_estoque_view, name='consultar-estoque'), 
-    path('remover-estoque/', views.remover_estoque_view, name='remover-estoque'), 
-    path('editar-estoque/', views.editar_estoque_view, name='editar-estoque'), 
     path('CRUD/', include('CRUD.urls', namespace='CRUD'))
 
 
